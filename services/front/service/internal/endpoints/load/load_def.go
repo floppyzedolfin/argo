@@ -1,9 +1,7 @@
 package load
 
-import (
-	"github.com/floppyzedolfin/argo/services/portdomain/client/portdomain"
-)
-
-type Request map[string]portdomain.Port
+type Request struct {
+	Input string `json:"input"`
+}
 
 type Response struct {}

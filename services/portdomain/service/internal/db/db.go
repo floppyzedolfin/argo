@@ -14,7 +14,7 @@ type database struct {
 }
 
 func New() Database {
-	return &database{}
+	return &database{ports: make(map[string]portdomain.Port)}
 }
 
 func (d *database) Upsert(port portdomain.Port) {

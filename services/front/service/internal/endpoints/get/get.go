@@ -16,11 +16,13 @@ func Get(ctx *fiber.Ctx) (Response,  *fiber.Error) {
 	if err != nil {
 		return Response{}, fiber.NewError(fiber.StatusFailedDependency, fmt.Sprintf("unable to get all ports: %s", err.Error()))
 	}
-
+	logger.Log(logger.Debug, "retrieved %d ports from the backend", len(res.Ports))
 	ports := make(map[string]portdomain.Port, len(res.Ports))
 	for _, p := range res.Ports {
+		logger.Log(logger.Debug, "dealing with %s", p.Id)
+		id := p.Id
 		p.Id = ""
-		ports[p.Id] = *p
+		ports[id] = *p
 	}
 	return ports, nil
 }

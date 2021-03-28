@@ -46,9 +46,9 @@ func Upsert(ctx context.Context, req *portdomain.UpsertRequest) error {
 	ctx, cancel := context.WithTimeout(ctx, time.Second)
 	defer cancel()
 
-	_, err = client.Get(ctx, nil)
+	_, err = client.Upsert(ctx, req)
 	if err != nil {
-		return fmt.Errorf("error while querying the get endpoint: %w", err)
+		return fmt.Errorf("error while querying the upsert endpoint: %w", err)
 	}
 
 	return nil

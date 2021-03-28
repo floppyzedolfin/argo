@@ -16,5 +16,5 @@ func Upsert(_ context.Context, req *portdomain.UpsertRequest, database db.Databa
 	}
 	logger.Log(logger.Info, "upserting port %s", req.Port.Id)
 	database.Upsert(*req.Port)
-	return nil, nil
+	return &portdomain.UpsertResponse{}, nil
 }
