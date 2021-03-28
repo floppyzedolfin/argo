@@ -8,6 +8,7 @@ import (
 
 	"github.com/floppyzedolfin/argo/pkg/logger"
 	"github.com/floppyzedolfin/argo/services/front/service/internal/endpoints/load"
+	"github.com/floppyzedolfin/argo/services/portdomain/client"
 )
 
 func Load(ctx *fiber.Ctx) error {
@@ -17,8 +18,9 @@ func Load(ctx *fiber.Ctx) error {
 	}
 	logger.Log(logger.Info, "received request for endpoint Load")
 
+	cli := client.NewPortdomainClient(nil)
 	// call the endpoint
-	res, err := load.Load(ctx, *req)
+	res, err := load.Load(ctx, *req, cli)
 	if err != nil {
 		return ctx.Status(err.Code).JSON(fiber.Map{"error": err.Message})
 	}
