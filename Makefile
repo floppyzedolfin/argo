@@ -30,7 +30,7 @@ network:
 	docker network create --subnet=172.18.0.0/16 network-${PROJECT} || true
 
 run-front:
-	docker run -d -p 8411:8411 --network network-${PROJECT} --ip 172.18.0.22 --rm --name ${FRONT} ${PROJECT}-front:${VERSION}
+	docker run -d -p 8411:8411 --network network-${PROJECT} --ip 172.18.0.22 -v ${PWD}/testdata:/tmp --rm --name ${FRONT} ${PROJECT}-front:${VERSION}
 
 run-portdomain:
 	docker run -d -p 8405:8405 --network network-${PROJECT} --ip 172.18.0.23 --rm --name ${PORTDOMAIN} ${PROJECT}-portdomain:${VERSION}
