@@ -1,10 +1,10 @@
 PROJECT=argo
 VERSION=1.0.0
-GO=go
+GO=GO111MODULE=on go
 
-build:
-	${GO} build -o build/front/front.out services/front/cmd
-	${GO} build -o build/portdomain/portdomain.out services/portdomain/cmd
+local-build:
+	${GO} build -o build/front/front.out ./services/front/service/cmd
+	${GO} build -o build/portdomain/portdomain.out ./services/portdomain/service/cmd
 
 test:
 	${GO} test ./...
@@ -15,7 +15,7 @@ cover:
 check-cover: cover
 	${GO} test ./... -cover
 
-docker-build: build
+docker-build: local-build
 	docker build -t ${PROJECT}-front:${VERSION} build/front
 	docker build -t ${PROJECT}-portdomain:${VERSION} build/portdomain
 
