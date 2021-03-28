@@ -1,7 +1,7 @@
 syntax = "proto3";
-option go_package = "github.com/floppyzedolfin/argo/services/client";
+option go_package = "github.com/floppyzedolfin/argo/services/portdomain";
 
-package client;
+package portdomain;
 
 service portdomain {
     // Add / update a port in the database
