@@ -9,6 +9,7 @@ import (
 	"time"
 )
 
+// level defines the type of log message. Exposed consts are in logical increasing order
 type level int
 
 const (

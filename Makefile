@@ -1,6 +1,6 @@
 PROJECT=argo
 VERSION=1.0.0
-# CGO_ENABLED=0 means we're not looking for C libs when using the network packages (these libs are absent in alpine images)
+# CGO_ENABLED=0 means we're not looking for C libs when using the network packages (these libs are absent in a scratch images)
 # GO111MODULE=on means we are using modules and not the old vendor dir and GO*** env variables
 GO=GO111MODULE=on CGO_ENABLED=0 go
 

@@ -52,4 +52,4 @@ The first version of my code loaded the whole input file, which didn't respect t
 I've written unit tests over some sections of the code, but I'd need to use `mockgen` to mock the backend.
 This would mean rewriting the whole `handlers` package, but I think it would bring some simplicity - it would, however, be a great opportunity to not spawn a client from `front` to `portdomain` on each endpoint call.
 
-Further steps would be to have integration tests in the CI, and to use a staged build (see http://github.com/floppyzedolfin/square for an example of how I would have done it).
+Further steps would be to have integration tests in the CI, and to use a staged build (see http://github.com/floppyzedolfin/square for an example of how I would have done it). And probably, having a real database, rather than something lying in the memory, would be extremely necessary very fast - at least for data consistency. I'd use mongo, because I've already used mongo.

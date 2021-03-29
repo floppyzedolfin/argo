@@ -6,11 +6,10 @@ import (
 
 	"github.com/floppyzedolfin/argo/pkg/logger"
 	"github.com/floppyzedolfin/argo/services/portdomain/client/portdomain"
-	"github.com/floppyzedolfin/argo/services/portdomain/service/internal/db"
 )
 
 // Get is the implementation of the Get endpoint. The output is deterministic.
-func Get(_ context.Context, _ *portdomain.GetRequest, database db.Database) (*portdomain.GetResponse, error) {
+func Get(_ context.Context, _ *portdomain.GetRequest, database getDatabase) (*portdomain.GetResponse, error) {
 	logger.Log(logger.Info, "in get endpoint")
 	dbPorts := database.Get()
 	ports := make([]*portdomain.Port, 0, len(dbPorts))
