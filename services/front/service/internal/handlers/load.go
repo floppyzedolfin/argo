@@ -9,6 +9,7 @@ import (
 	"github.com/floppyzedolfin/argo/services/front/service/internal/endpoints/load"
 )
 
+// Load wraps the front service's load endpoint, and is in charge of decoding the request and setting the status
 func Load(ctx *fiber.Ctx) error {
 	req := new(load.Request)
 	if err := ctx.BodyParser(req); err != nil {

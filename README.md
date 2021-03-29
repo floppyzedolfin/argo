@@ -50,6 +50,6 @@ I've decided to use `fiber` for the front service. I've used it in a small test 
 The first version of my code loaded the whole input file, which didn't respect the requirement of memory limitation. But it allowed me to test the rest of the endpoints.
 
 I've written unit tests over some sections of the code, but I'd need to use `mockgen` to mock the backend.
-This would mean rewriting the whole `handlers` package, but I think it would bring some simplicity.
+This would mean rewriting the whole `handlers` package, but I think it would bring some simplicity - it would, however, be a great opportunity to not spawn a client from `front` to `portdomain` on each endpoint call.
 
 Further steps would be to have integration tests in the CI, and to use a staged build (see http://github.com/floppyzedolfin/square for an example of how I would have done it).

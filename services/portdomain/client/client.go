@@ -1,3 +1,4 @@
+// Package client exposes the API of the backend
 package client
 
 import (
@@ -16,6 +17,7 @@ const (
 	portNumber = 8405
 )
 
+// Get exposes the service's Get endpoint
 func Get(ctx context.Context) (*portdomain.GetResponse, error) {
 	clientConnexion, err := grpc.Dial(fmt.Sprintf("%s:%d", ip, portNumber), grpc.WithInsecure())
 	if err != nil {
@@ -35,6 +37,7 @@ func Get(ctx context.Context) (*portdomain.GetResponse, error) {
 	return res, nil
 }
 
+// Upsert exposes the service's Upsert endpoint
 func Upsert(ctx context.Context, req *portdomain.UpsertRequest) error {
 	clientConnexion, err := grpc.Dial(fmt.Sprintf("%s:%d", ip, portNumber), grpc.WithInsecure())
 	if err != nil {

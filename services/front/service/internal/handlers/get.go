@@ -7,6 +7,7 @@ import (
 	"github.com/floppyzedolfin/argo/services/front/service/internal/endpoints/get"
 )
 
+// Get wraps the front service's get endpoint, and is in charge of decoding the request and setting the status
 func Get(ctx *fiber.Ctx) error {
 	logger.Log(logger.Info, "received request for endpoint Get")
 

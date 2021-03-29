@@ -15,15 +15,18 @@ import (
 	"github.com/floppyzedolfin/argo/services/portdomain/service/internal/endpoints/upsert"
 )
 
+// portdomainServer is the gRPC wrapper around our service
 type portdomainServer struct {
 	portdomain.PortdomainServer
 	database db.Database
 }
 
+// Upsert is the gRPC server implementation of the endpoint
 func (p *portdomainServer) Upsert(ctx context.Context, req *portdomain.UpsertRequest) (*portdomain.UpsertResponse, error) {
 	return upsert.Upsert(ctx, req, p.database)
 }
 
+// Get is the gRPC server implementation of the endpoint
 func (p *portdomainServer) Get(ctx context.Context, req *portdomain.GetRequest) (*portdomain.GetResponse, error) {
 	return get.Get(ctx, req, p.database)
 }

@@ -10,6 +10,7 @@ import (
 	"github.com/floppyzedolfin/argo/services/portdomain/client"
 )
 
+// Load calls the backend for each entry in the input file
 func Load(ctx *fiber.Ctx, req Request) (Response, *fiber.Error) {
 	logger.Log(logger.Info, "in load endpoint")
 	f, err := os.Open(req.Input)

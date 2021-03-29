@@ -9,6 +9,7 @@ import (
 	"github.com/floppyzedolfin/argo/services/portdomain/client/portdomain"
 )
 
+// upserter is a utility that knows how to talk with the backend
 type upserter struct {
 	backendUpserter func(context.Context, *portdomain.UpsertRequest) error
 }

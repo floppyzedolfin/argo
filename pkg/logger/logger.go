@@ -20,11 +20,12 @@ const (
 )
 
 var (
-	// these default parameters exist for testing purposes only - they aren't exposed
+	// these default parameters exist for testing purposes only - they aren't exposed, so it's "ok" to have them as global variables
 	defaultLevel                  = Debug    // change this to set a new logging threshold
 	clock        func() time.Time = time.Now // needed for time
 )
 
+// Log writes a message on stdout, if the log level is high enough.
 func Log(lvl level, format string, a ...interface{}) {
 	if lvl >= defaultLevel {
 		// skipping 2 layers, in order to get to the caller of this func

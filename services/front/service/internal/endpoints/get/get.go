@@ -10,6 +10,7 @@ import (
 	"github.com/floppyzedolfin/argo/services/portdomain/client/portdomain"
 )
 
+// Get calls the backend's Get endpoint, and cleans up "our" fields from its response
 func Get(ctx *fiber.Ctx) (Response, *fiber.Error) {
 	logger.Log(logger.Info, "in get endpoint")
 	res, err := client.Get(ctx.Context())

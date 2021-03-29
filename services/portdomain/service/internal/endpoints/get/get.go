@@ -9,6 +9,7 @@ import (
 	"github.com/floppyzedolfin/argo/services/portdomain/service/internal/db"
 )
 
+// Get is the implementation of the Get endpoint. The output is deterministic.
 func Get(_ context.Context, _ *portdomain.GetRequest, database db.Database) (*portdomain.GetResponse, error) {
 	logger.Log(logger.Info, "in get endpoint")
 	dbPorts := database.Get()
