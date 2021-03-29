@@ -28,13 +28,13 @@ func (p *portdomainServer) Get(ctx context.Context, req *portdomain.GetRequest) 
 	return get.Get(ctx, req, p.database)
 }
 
-func main () {
+func main() {
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", 8405))
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
 	grpcServer := grpc.NewServer()
 	portdomain.RegisterPortdomainServer(grpcServer, &portdomainServer{database: db.New()})
-	logger.Log(logger.Info,"portdomain running...")
+	logger.Log(logger.Info, "portdomain running...")
 	grpcServer.Serve(lis)
 }

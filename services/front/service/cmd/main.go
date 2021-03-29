@@ -9,6 +9,6 @@ const frontPort = 8411
 
 func main() {
 	f := internal.New()
-	logger.Log(logger.Info,"front running...")
+	logger.Log(logger.Info, "front running...")
 	f.Listen(frontPort)
 }

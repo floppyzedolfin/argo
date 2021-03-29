@@ -45,7 +45,7 @@ func (u *upserter) upsertPort(ctx context.Context, dec *json.Decoder) error {
 	if err = dec.Decode(&p); err != nil {
 		return fmt.Errorf("unable to decode port: %w", err)
 	}
-	p.Id =  token.(string)
+	p.Id = token.(string)
 
 	if err = u.backendUpserter(ctx, &portdomain.UpsertRequest{Port: p}); err != nil {
 		return fmt.Errorf("error while calling backend: %w", err)

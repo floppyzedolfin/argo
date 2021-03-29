@@ -3,16 +3,9 @@ name: build
 on: [ push ]
 
 jobs:
-  stagedbuild:
+  local-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: stagedbuild
-        run: make stagedbuild
-
-  localbuild:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: localbuild
-        run: make build
+      - name: build
+        run: make local-build

@@ -1,11 +1,11 @@
-name: coverage
+name: run
 
 on: [ push ]
 
 jobs:
-  cover:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: unit tests, with coverage
-        run: make test-cover
+      - name: test
+        run: make test

@@ -15,9 +15,6 @@ test:
 	${GO} test ./...
 
 cover:
-	${GO} test
-
-check-cover: cover
 	${GO} test ./... -cover
 
 docker-build: local-build

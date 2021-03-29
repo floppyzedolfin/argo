@@ -4,4 +4,4 @@ type Request struct {
 	Input string `json:"input"`
 }
 
-type Response struct {}
+type Response struct{}

@@ -10,7 +10,7 @@ import (
 	"github.com/floppyzedolfin/argo/services/portdomain/client/portdomain"
 )
 
-func Get(ctx *fiber.Ctx) (Response,  *fiber.Error) {
+func Get(ctx *fiber.Ctx) (Response, *fiber.Error) {
 	logger.Log(logger.Info, "in get endpoint")
 	res, err := client.Get(ctx.Context())
 	if err != nil {

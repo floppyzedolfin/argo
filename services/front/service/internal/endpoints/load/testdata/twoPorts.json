@@ -1,0 +1,34 @@
+{
+  "BFOUA": {
+    "name": "Ouagadougou",
+    "city": "Ouagadougou",
+    "country": "Burkina Faso",
+    "alias": [],
+    "regions": [],
+    "coordinates": [
+      -1.5196603,
+      12.3714277
+    ],
+    "province": "Centre",
+    "timezone": "Africa/Ouagadougou",
+    "unlocs": [
+      "BFOUA"
+    ]
+  },
+  "GBTYN": {
+    "name": "Tyne",
+    "coordinates": [
+      -1.43,
+      55
+    ],
+    "city": "Tyne",
+    "province": "Newcastle upon Tyne",
+    "country": "United Kingdom",
+    "alias": [],
+    "regions": [],
+    "timezone": "Europe/London",
+    "unlocs": [
+      "GBTYN"
+    ]
+  }
+}

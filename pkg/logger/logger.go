@@ -48,7 +48,7 @@ func buildLogEntry(lvl level, msg string, t func() time.Time, skip int) logEntry
 	// read the stack
 	n := runtime.Callers(skip+1, fpcs)
 	if n != 0 {
-		caller := runtime.FuncForPC(fpcs[0]-1)
+		caller := runtime.FuncForPC(fpcs[0] - 1)
 		if caller != nil {
 			callerFunc = caller.Name()
 			path := strings.Split(callerFunc, string(os.PathSeparator))
@@ -64,9 +64,9 @@ func buildLogEntry(lvl level, msg string, t func() time.Time, skip int) logEntry
 	}
 }
 
-var levelNames = map[level]string {
-	Debug: "Debug",
-	Info: "Info",
+var levelNames = map[level]string{
+	Debug:   "Debug",
+	Info:    "Info",
 	Warning: "Warning",
-	Error: "Error",
+	Error:   "Error",
 }

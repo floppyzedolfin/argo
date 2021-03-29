@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM scratch
 
 COPY front.out /app/server.out
 
