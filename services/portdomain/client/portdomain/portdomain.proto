@@ -1,0 +1,41 @@
+syntax = "proto3";
+option go_package = "github.com/floppyzedolfin/argo/services/portdomain";
+
+package portdomain;
+
+service portdomain {
+    // Add / update a port in the database
+    rpc Upsert(UpsertRequest) returns (UpsertResponse) {}
+
+    // Get returns all ports from the database
+    rpc Get(GetRequest) returns (GetResponse) {}
+}
+
+message UpsertRequest {
+    Port port = 1;
+}
+
+message UpsertResponse {
+}
+
+message GetRequest {
+}
+
+message GetResponse {
+    repeated Port ports = 1;
+}
+
+// Port holds the information about a harbour
+message Port {
+    string name = 1;
+    string city = 2;
+    string country = 3;
+    repeated string alias = 4;
+    repeated string regions = 5;
+    repeated float coordinates = 6;
+    string province = 7;
+    string timezone = 8;
+    repeated string unlocs = 9;
+    string code = 10;
+    string id = 11;
+}

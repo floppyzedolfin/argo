@@ -1,0 +1,18 @@
+{
+  "BFOUA": {
+    "name": "Ouagadougou",
+    "city": "Ouagadougou",
+    "country": "Burkina Faso",
+    "alias": [],
+    "regions": [],
+    "coordinates": [
+      -1.5196603,
+      12.3714277
+    ],
+    "province": "Centre",
+    "timezone": "Africa/Ouagadougou",
+    "unlocs": [
+      "BFOUA"
+    ]
+  }
+}
