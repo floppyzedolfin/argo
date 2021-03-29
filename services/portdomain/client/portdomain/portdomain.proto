@@ -25,6 +25,7 @@ message GetResponse {
     repeated Port ports = 1;
 }
 
+// Port holds the information about a harbour
 message Port {
     string name = 1;
     string city = 2;
