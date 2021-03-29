@@ -18,7 +18,7 @@ import (
 // portdomainServer is the gRPC wrapper around our service
 type portdomainServer struct {
 	portdomain.PortdomainServer
-	database db.Database
+	database *db.Database
 }
 
 // Upsert is the gRPC server implementation of the endpoint

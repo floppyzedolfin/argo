@@ -9,9 +9,7 @@ import (
 
 func TestNew(t *testing.T) {
 	d := New()
-	dCasted, ok := d.(*database)
-	assert.True(t, ok)
-	assert.NotNil(t, dCasted.ports)
+	assert.NotNil(t, d.ports)
 }
 
 func TestDatabase_Get(t *testing.T) {
@@ -34,7 +32,7 @@ func TestDatabase_Get(t *testing.T) {
 	}
 	for name, tc := range tt {
 		t.Run(name, func(t *testing.T) {
-			d := database{ports: map[string]portdomain.Port{}}
+			d := Database{ports: map[string]portdomain.Port{}}
 			for _, k := range tc.knownPorts {
 				d.ports[ports[k].Id] = ports[k]
 			}
@@ -68,7 +66,7 @@ func TestDatabase_Upsert(t *testing.T) {
 	}
 	for name, tc := range tt {
 		t.Run(name, func(t *testing.T) {
-			d := database{ports: map[string]portdomain.Port{}}
+			d := Database{ports: map[string]portdomain.Port{}}
 			for _, k := range tc.upserts {
 				d.Upsert(ports[k])
 			}
